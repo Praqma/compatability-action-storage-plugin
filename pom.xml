@@ -10,7 +10,7 @@
     <artifactId>compatibility-action-storage</artifactId>
     <version>1.1-SNAPSHOT</version>
     <packaging>hpi</packaging>
-    <url>https://wiki.jenkins-ci.org/display/JENKINS/Compatability+Action+Storage+Plugin</url>
+    <url>https://wiki.jenkins-ci.org/display/JENKINS/Compatibility+Action+Storage+Plugin</url>
     
     <developers>
         <developer>
