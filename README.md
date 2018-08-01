@@ -1,13 +1,14 @@
-#Compatibility Action Storage Plugin
+# Compatibility Action Storage Plugin
+
 The purpose of this plugin is to provide a way to store metadata about the given compatability of an abstract configuration. Currently using MongoDB.
 
-##Usage
+## Usage
+
 The current implementation can be used this way, we only include the MongoDB connector `GlobalConfiguration.all().get(NoSQLDatabasePlugin.class).getProvider()`
 
 The Provider is serializable, so you will need to initialize and get the Provider and pass that down if you want to use it in remoting. (Make the database call from the slave for example)
 
-
-##MongoDB examples
+## MongoDB examples
 
 Then you can insert objects with the follwing method
 `...getProvider().create(new MyObject("myuniqueid))`. Creates the object. The default mongodb implementation assigns an arbitrary object id to the returned object. 
@@ -24,12 +25,13 @@ You can also extract Many objects of the same type:
 Other methods include (list and sort)
 `...getProvider().listAndSort(new DBObject("",""), new BasicDBOBject("date",-1));`
 
-##Requirements
+## Requirements
+
 For the MongoDB implementation we require that the POJO is annotated with the @ObjectID annotation because we use Jackson to convert and store the objects in json format in the database. 
 
 Example
-````
 
+```java
     @ObjectId
     @JsonProperty("_id")
     public String getId() {
@@ -40,10 +42,9 @@ Example
     @JsonProperty("_id")
     public void setId(String id) {
         this.id = id;
-    }
-    
-````
+    }    
+```
 
-##Limitations
+## Limitations
 
 Only one database per jenkins instance is supported at the moment. 
